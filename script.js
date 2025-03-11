@@ -1,5 +1,8 @@
 const NOTA_MIN = 1;
 const NOTA_MAX = 10;
+const NM_NOMBRE = "Matemática";
+const NL_NOMBRE = "Lengua";
+const NE_NOMBRE = "EFSI";
 const resultado = document.getElementById("resultado");
 const notaMatematica = document.getElementById("notaMatematica");
 const notaLengua = document.getElementById("notaLengua");
@@ -17,14 +20,36 @@ function comprobarNotasValidas() {
 }
 
 function calcularPromedio() {
-    let sumaNotas = parseInt(notaMatematica.value) + parseInt(notaLengua.value) + parseInt(notaEFSI.value);
-    let comprobarNotas;
     let promedio;
-    
-    
+    let sumaNotas;
+
     if (comprobarNotasValidas())
     {
+        sumaNotas = Number(notaMatematica.value) + Number(notaLengua.value) + Number(notaEFSI.value);
         promedio = sumaNotas / 3;
         resultado.innerText = "Promedio: " + promedio;
+    }
+}
+
+function mostrarMateriaMayorNota() {
+    let notaMaxNum;
+    let notaMaxNombre = "";
+    let nMValue, nLValue, nEValue;
+
+    if (comprobarNotasValidas()) {
+        nMValue = Number(notaMatematica.value);
+        nLValue = Number(notaLengua.value);
+        nEValue = Number(notaEFSI.value);
+
+        notaMaxNum = Math.max(nMValue, nLValue, nEValue);
+
+        if (nMValue === notaMaxNum)
+            notaMaxNombre += NM_NOMBRE + " ";
+        if (nLValue === notaMaxNum)
+            notaMaxNombre += NL_NOMBRE + " ";
+        if (nEValue === notaMaxNum)
+            notaMaxNombre += NE_NOMBRE + " ";
+
+        resultado.innerText = `Nota(s) más alta es de ${notaMaxNombre}(${notaMaxNum})`;
     }
 }
