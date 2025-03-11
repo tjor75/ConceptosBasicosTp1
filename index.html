@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,20 @@
     <div id="resultado"></div>
 
     <div>
-        <label for="notaMatematica">Nota de matemática:</label>
-        <input id="notaMatematica" type="number">
-        <label for="notaLengua">Nota de Lengua:</label>
-        <input id="notaLengua" type="number">
-        <label for="notaEFSI">Nota de EFSI:</label>
-        <input id="notaEFSI" type="number">
+        <div>
+            <label for="notaMatematica">Nota de Matemática:</label>
+            <input id="notaMatematica" type="number" required>
+        </div>
+        <div>
+            <label for="notaLengua">Nota de Lengua:</label>
+            <input id="notaLengua" type="number" required>
+        </div>
+        <div>
+            <label for="notaEFSI">Nota de EFSI:</label>
+            <input id="notaEFSI" type="number" required>
+        </div>
+
+        <p>Solo se aceptan números del 1-10</p>
     </div>
 
     <div>
